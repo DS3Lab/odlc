@@ -1,0 +1,67 @@
+{
+  "gru1": {
+    "marker": "^",
+    "lw": 2.5,
+    "linestyle": "-"
+  },
+  "gru075": {
+    "marker": "v",
+    "lw": 1.5,
+    "linestyle": "-"
+  },
+  "gru05": {
+    "marker": "v",
+    "lw": 1.5,
+    "linestyle": "-"
+  },
+  "gru025": {
+    "marker": "v",
+    "lw": 1.5,
+    "linestyle": "-"
+  },
+  "gru0": {
+    "marker": "v",
+    "lw": 2.5,
+    "linestyle": "-"
+  },
+  "cpm": {
+    "marker": "*",
+    "lw": 1.5,
+    "linestyle": "--"
+  },
+  "bpg": {
+    "marker": "D",
+    "lw": 1.5,
+    "linestyle": "--"
+  },
+  "webp": {
+    "marker": "d",
+    "lw": 1.5,
+    "linestyle": "--"
+  },
+  "jpeg": {
+    "marker": "X",
+    "lw": 1.5,
+    "linestyle": "--"
+  },
+  "gru1top": {
+    "marker": "x",
+    "lw": 2.5,
+    "linestyle": "--"
+  },
+  "gru1bottom": {
+    "marker": "v",
+    "lw": 2.5,
+    "linestyle": ":"
+  },
+  "gru1topbottom": {
+    "marker": "^",
+    "lw": 2.5,
+    "linestyle": "-."
+  },
+  "gru1all": {
+    "marker": "d",
+    "lw": 2.5,
+    "linestyle": "-"
+  }
+}

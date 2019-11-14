@@ -1,0 +1,25 @@
+# resources to ignore
+code/resources/tmp/*
+code/resources/imagenet/meta/devkit/*
+
+code/resources/imagenet/weights/*
+!code/resources/imagenet/weights/.gitkeep
+
+code/resources/keras_models/*
+!code/resources/keras_models/.gitkeep
+
+code/resources/tf_slim_models/*
+!code/resources/tf_slim_models/.gitkeep
+
+code/resources/trained_models/*
+!code/resources/trained_models/.gitkeep
+
+code/src/compression/cond_prob_models/ckpts
+
+# other redundant files and dirs
+**plots/
+**/.DS_Store
+**/__pycache__
+**/*.pyc
+.idea/
+figs/*.drawio

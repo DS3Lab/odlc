@@ -1,0 +1,25 @@
+{
+  "model": {
+    "rnn_unit": "gru",
+    "rec_model": 0,
+    "num_iterations": 4
+  },
+  "train": {
+    "learning_rate": 4e-4,
+    "batch_size": 8,
+    "num_epochs": 3,
+    "shuffle_buffer_size": 8
+  },
+  "general": {
+    "lambda_ms_ssim": 5000,
+    "lambda_psnr": 100,
+    "lambda_feature_loss": 1,
+    "feature_loss_components": [
+      "relu5_1"
+    ],
+    "crop_size": 224,
+    "num_preprocessing_threads": 8,
+    "eval_steps": 500,
+    "save_checkpoint_steps": 10000
+  }
+}

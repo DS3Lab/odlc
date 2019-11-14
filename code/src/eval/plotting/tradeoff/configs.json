@@ -1,0 +1,27 @@
+{
+  "rnn": {
+    "marker": "v",
+    "lw": 2.5,
+    "linestyle": "-"
+  },
+  "cpm": {
+    "marker": null,
+    "lw": 1.0,
+    "linestyle": "dashdot"
+  },
+  "bpg": {
+    "marker": "D",
+    "lw": 1.0,
+    "linestyle": "--"
+  },
+  "webp": {
+    "marker": "d",
+    "lw": 1.0,
+    "linestyle": "denselydasheddotdotted"
+  },
+  "jpeg": {
+    "marker": "X",
+    "lw": 1.0,
+    "linestyle": "-."
+  }
+}
