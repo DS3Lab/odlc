@@ -1,10 +1,10 @@
 import argparse
 
-_DATASETS = ['imagenet', 'cub200', 'stanford_dogs']
+_DATASETS = ['imagenet', 'cub200', 'stanford_dogs', 'kodak']
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=True, type=str, choices=_DATASETS)
-parser.add_argument('--split', required=True, type=str, choices=['train', 'val'])
+parser.add_argument('--split', required=False, type=str, choices=['train', 'val'])
 parser.add_argument('--data_dir', required=True, type=str, help='dir where data is located')
 parser.add_argument('--target_dir', required=True, type=str, help='dir where records files are saved to')
 
@@ -49,6 +49,14 @@ def main(_opts):
         from src.data.dataprepare.cub200.records_writer import RecordsWriter
 
         records_writer = RecordsWriter(_opts.data_dir, 1 if _opts.split == 'train' else 0, _opts.target_dir)
+        records_writer.process_files()
+        return
+
+    if _opts.dataset == 'kodak':
+        assert _opts.data_dir is not None
+        from src.data.dataprepare.kodak.records_writer import RecordsWriter
+
+        records_writer = RecordsWriter(_opts.data_dir, _opts.target_dir)
         records_writer.process_files()
         return
 

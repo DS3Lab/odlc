@@ -1,7 +1,7 @@
 # Observer Dependent Lossy Image Compression
 
 <div style="text-align: center">
-  <img src="figs/tradeoff_teaser.jpg"/>
+  <img src="figs/tradeoff_teaser2.jpg" width="1027"/>
 </div>
 
 ## Requirements
@@ -36,7 +36,7 @@ and the classifier is set via `CLASSIFIER` as one of
 - `densenet_121, inception_resnet_v2, inception_v3, mobilenet, resnet_50, vgg16, xception`
 
 ## Downloading and prepraring image data
-#### Downloading and prepraring ILSVRC-2012 data
+#### ILSVRC-2012
 If you want to use ImageNet data, make sure you have an account with image-net.org and a username with access key. Then, go through the following steps:
 1. Download the devkit from the official imagenet homepage and extract it to `code/resources/imagenet/meta/`. 
 2. Download the ILSVRC2012 training and validation datasets, see e.g. the [download_imagenet.sh](https://github.com/tensorflow/models/blob/master/research/inception/inception/data/download_imagenet.sh) script provided by tensorflow.
