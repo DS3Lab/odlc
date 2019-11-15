@@ -1,5 +1,5 @@
 # Observer Dependent Lossy Image Compression
-Tensorflow implementation of **Observer Dependent Lossy Image Compression**. [[Paper]](https://notawebsite) [[Citation]](#citation)
+Tensorflow implementation of **Observer Dependent Lossy Image Compression**. [[Paper]]() [[Citation]](#citation)
 
 <div style="text-align: center">
   <img src="figs/tradeoff_teaser.jpg"/>
@@ -37,19 +37,44 @@ compression the usual parameters apply.
 and the classifier is set via `CLASSIFIER` as one of
 - `densenet_121, inception_resnet_v2, inception_v3, mobilenet, resnet_50, vgg16, xception`
 
-## Train your own models
+## Downloading and prepraring image data
 #### Downloading and prepraring ILSVRC-2012 data
 If you want to use ImageNet data, make sure you have an account with image-net.org and a username with access key. Then, go through the following steps:
 1. Download the devkit from the official imagenet homepage and extract it to `code/resources/imagenet/meta/`. 
 2. Download the ILSVRC2012 training and validation datasets, see e.g. the [download_imagenet.sh](https://github.com/tensorflow/models/blob/master/research/inception/inception/data/download_imagenet.sh) script provided by tensorflow.
-3. Create tfrecords files with training and testing data by running the following commands:
+3. Create tfrecords files with training and validation data by running the steps described above.
+
+#### Stanford Dogs
+1. Download the `Images` and `Lists` tar files from [here](http://vision.stanford.edu/aditya86/ImageNetDogs/)
+2. Extract them both to the same folder (e.g. `~/data/stanford_dogs/`)
+
+#### CUB-200-2011
+1. Download the `All Images and Annotations` tar file from [here](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)
+2. Extract to a folder (e.g. `~/data/cub200/`)
+
+### Store data in tfrecords files 
+Throughout this repo we store data in tfrecords files, both for evaluation and training. Tfrecords files are generated 
+using the script `code/create_data_records.py` for Stanford Dogs, CUB-200-2011 and ImageNet datasets. The following assumes 
+that you have downloaded the necessary data to the right locations. Then, run the script as follows:
 ````bash
 cd code/
-python create_imagenet_records.py --split val --data_dir /path/to/val/dir --target_dir /path/to/records
-python create_imagenet_records.py --split train --data_dir /path/to/train/dir --target_dir /path/to/records
+python create_data_records.py --dataset DATASET --split SPLIT --data_dir /path/to/data/dir --target_dir /path/to/records
 ````
+where `DATASET` is one of `imagenet`, `stanford_dogs`, `cub200` and `SPLIT` is either `train` or `val`. 
+
+## Evaluate Accuracy and MS-SSIM on a dataset
+You can evaluate accuracy and MS-SSIM on different datasets using one of the scripts `code/eval_accuracy.py` or `code/eval_hvs.py`. 
+This assumes that you have trained models available and data stored as tfrecords files. The following is an example to evaluate accuracy on ImageNet compressed with RNNs:
+```bash
+cd code/
+python eval_accuracy.py --dataset imagenet \
+    --compression rnn \
+    --records /path/to/records/ \
+    --rnn_ckpt_dir /path/to/rnn/ckpt/
+```
 
 
+## Train your own models
 #### Train RNN compression
 I you want to train RNN compression, make sure you followed the previous steps and have the training data in the appropriate format. Note that if `ALPHA` > 0, you
 will have to download VGG-16 weights from [here](https://github.com/machrisaa/tensorflow-vgg) first. Then run
@@ -72,7 +97,7 @@ For the latter, you can download weights from tf slim [here](https://github.com/
 and extract the checkpoints to `code/resources/tf_slim_models`. The config files containing hyperparameters used in the 
 paper are in `code/src/classification/fine_grained_categorization/training/configs/`.
 
-The following is an example to finetune Incetpion-V3 on the Stanford Dogs dataset initializing the feature extractor with ImageNet weights and subsequently finetuning all layers:
+The following is an example to finetune Incetpion-V3 on the Stanford Dogs dataset initializing the feature extractor with ImageNet weights and subsequently fine-tuning all layers:
 
 ```bash
 cd code/
@@ -88,7 +113,7 @@ python train_classification.py --classifier inception_v3 \
 ## Citation
 Please cite this paper if you use this code as part of your research:
 
-    @misc{anonymous2019lossycompression,
+    @misc{anonymous2020odlc,
         title={Lossy Image Compression with Recurrent Neural Networks: from Human Perceived Visual Quality to Classification Accuracy},
         author={anonymous authors},
         year={2019}}
