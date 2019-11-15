@@ -1,7 +1,7 @@
 # Observer Dependent Lossy Image Compression
 
 <div style="text-align: center">
-  <img src="figs/tradeoff_teaser2.jpg" width="1027"/>
+  <img src="figs/tradeoff_teaser1.jpg"/>
 </div>
 
 ## Requirements
