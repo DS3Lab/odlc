@@ -1,10 +1,8 @@
 # Observer Dependent Lossy Image Compression
-Tensorflow implementation of **Observer Dependent Lossy Image Compression**. [[Paper]]() [[Citation]](#citation)
 
 <div style="text-align: center">
   <img src="figs/tradeoff_teaser.jpg"/>
 </div>
-
 
 ## Requirements
 - Python 3 (tested with versions 3.5.2 and 3.6.5)
@@ -52,7 +50,7 @@ If you want to use ImageNet data, make sure you have an account with image-net.o
 1. Download the `All Images and Annotations` tar file from [here](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)
 2. Extract to a folder (e.g. `~/data/cub200/`)
 
-### Store data in tfrecords files 
+#### Store data in tfrecords files 
 Throughout this repo we store data in tfrecords files, both for evaluation and training. Tfrecords files are generated 
 using the script `code/create_data_records.py` for Stanford Dogs, CUB-200-2011 and ImageNet datasets. The following assumes 
 that you have downloaded the necessary data to the right locations. Then, run the script as follows:
@@ -108,12 +106,3 @@ python train_classification.py --classifier inception_v3 \
     --job_id JOB_ID \
     --pretrained_model resources/tf_slim_models/inception_v3/inception_v3.ckpt
 ```
-
-
-## Citation
-Please cite this paper if you use this code as part of your research:
-
-    @misc{anonymous2020odlc,
-        title={Lossy Image Compression with Recurrent Neural Networks: from Human Perceived Visual Quality to Classification Accuracy},
-        author={anonymous authors},
-        year={2019}}
