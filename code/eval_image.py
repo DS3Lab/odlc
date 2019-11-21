@@ -300,7 +300,7 @@ def bpg_fetches(image_tensor, quality):
     if not os.path.exists(TEMP_DIR):
         os.makedirs(TEMP_DIR)
 
-    image_png_bytes = tf.image.encode_png(image_tensor)  # lossless compression -> encode as png
+    image_png_bytes = tf.image.encode_png(image_tensor)  # encode as png
 
     with tf.Session() as sess:
         image_png_bytes_val = sess.run(image_png_bytes)
@@ -346,7 +346,7 @@ def check_options(_opts):
     if file_ext not in ['.jpeg', '.jpg', '.png']:
         raise ValueError('unknown image format! got {}, must be one of `.jpeg`, `.jpg`, `.png`'.format(file_ext))
 
-    # check if classifiers is valid or None
+    # check if classifier is valid or None
     if _opts.classifier not in CLASSIFIERS and _opts.classifier is not None:
         raise ValueError('invalid classifier! got {}, must be one of {}'.format(
             _opts.classifier, CLASSIFIERS))

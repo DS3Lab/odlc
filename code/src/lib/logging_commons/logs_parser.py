@@ -58,7 +58,7 @@ class LogsParser:
 
     @classmethod
     def parse_hvs_file(cls, logfile, case_sensitive=True):
-        parsed_bpp, parsed_msssim, parsed_psnr, parsed_mse, parsed_l1 = [], [], [], [], []
+        parsed_bpp, parsed_msssim, parsed_psnr, parsed_mse = [], [], [], []
 
         # manage case sensitivity
         eval_line_kw = cls.EVAL_LINE_KW if case_sensitive else cls.EVAL_LINE_KW.lower()
@@ -75,15 +75,11 @@ class LogsParser:
                         float(cls.get_regex_for_hvs(cls.PSNR_KW).search(line).group(cls.PSNR_KW)))
                     parsed_mse.append(
                         float(cls.get_regex_for_hvs(cls.MSE_KW).search(line).group(cls.MSE_KW)))
-                    # parsed_l1.append(
-                    #     float(cls.get_regex_for_hvs(cls.L1_KW).search(line).group(cls.L1_KW)))
 
         indices_sorted = np.argsort(np.array(parsed_bpp))
         parsed_bpp = np.array(parsed_bpp)[indices_sorted]
         parsed_msssim = np.array(parsed_msssim)[indices_sorted]
         parsed_psnr = np.array(parsed_psnr)[indices_sorted]
         parsed_mse = np.array(parsed_mse)[indices_sorted]
-        # parsed_l1 = np.array(parsed_l1)[indices_sorted]
 
-        return {cls.BPP_KW: parsed_bpp, cls.MSSSIM_KW: parsed_msssim, cls.PSNR_KW: parsed_psnr, cls.MSE_KW: parsed_mse,
-                cls.L1_KW: parsed_l1}
+        return {cls.BPP_KW: parsed_bpp, cls.MSSSIM_KW: parsed_msssim, cls.PSNR_KW: parsed_psnr, cls.MSE_KW: parsed_mse}

@@ -1,7 +1,7 @@
 import os
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # noqa
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"  # noqa
+os.environ["CUDA_VISIBLE_DEVICES"] = ""  # noqa
 
 import cv2
 import inspect

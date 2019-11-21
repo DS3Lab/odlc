@@ -1,14 +1,8 @@
-import cv2
 from contextlib import contextmanager
-import json
 import os
 import subprocess
 
-import tensorflow as tf
-
 from src.compression.bpg.bpg_utils import get_bpg_meta_data
-from src.lib.logging_commons.utils import progress, get_logger
-from src.lib.tf_commons.utils import int64_feature, bytes_feature, float_feature
 
 
 class PyBPG:

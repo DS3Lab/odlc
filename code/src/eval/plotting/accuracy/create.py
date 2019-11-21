@@ -79,7 +79,7 @@ class AccuracyPlots:
             acc_data = np.array(read_csv(csv_file), dtype=np.float32)
 
             # sort data
-            acc_data.sort(axis=0)
+            acc_data = acc_data[acc_data[:, 0].argsort()]
 
             if bpp_min is not None:
                 include_idx = np.where(acc_data[:, 0] >= float(bpp_min))[0]
@@ -215,5 +215,5 @@ class AccuracyPlots:
                     handles=custom_lines_compressors,
                     labels=labels,
                     loc=legend_loc,
-                    prop=get_font(font_name, FONTSIZES.large),
+                    prop=get_font(font_name, FONTSIZES.big),
                     ncol=1)

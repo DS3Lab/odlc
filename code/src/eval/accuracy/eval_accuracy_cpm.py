@@ -1,7 +1,7 @@
 import os
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # noqa
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # noqa
+os.environ["CUDA_VISIBLE_DEVICES"] = ""  # noqa
 
 from collections import deque
 import json

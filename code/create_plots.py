@@ -1,6 +1,7 @@
 import argparse
 
-COMPR_KEYS = ['jpeg', 'bpg', 'webp', 'gru0', 'gru025', 'gru05', 'gru075', 'gru1', 'cpm']
+COMPR_KEYS = ['jpeg', 'bpg', 'webp', 'gru0', 'gru025', 'gru05', 'gru075', 'gru1', 'cpm', 'gru1all', 'gru1top',
+              'gru1bottom', 'gru1topbottom']
 _COMPR_KEYS_DEFAULTS = ['gru0', 'gru1', 'cpm', 'bpg', 'webp', 'jpeg']
 ALLOWED_CLASSIFIERS = ['all', 'densenet_121', 'inception_resnet_v2', 'inception_v3', 'mobilenet', 'resnet_50', 'vgg16',
                        'vgg19', 'xception', 'resnet_v1_50', 'vgg_16', 'mobilenet_v1']
@@ -37,8 +38,9 @@ options = parser.parse_args()
 
 _ACCURACY_DEFAULTS = {
     'imagenet': {'xmin': 0.09375, 'xmax': None, 'ymin': 0, 'ymax': 82, 'figsize': (3.7, 4.1), 'logscale': True},
-    'cub200': {'xmin': 0.09375, 'xmax': None, 'ymin': 0, 'ymax': 82, 'figsize': (3.7, 4.1), 'logscale': True},
-    'stanford_dogs': {'xmin': 0.09375, 'xmax': None, 'ymin': 0, 'ymax': 95, 'figsize': (3.7, 4.1), 'logscale': True}
+    'imagenet2': {'xmin': 0.09375, 'xmax': 0.53125, 'ymin': 0, 'ymax': 70, 'figsize': (3.7, 4.1), 'logscale': False},
+    'cub200': {'xmin': 0.09375, 'xmax': None, 'ymin': 0, 'ymax': 72, 'figsize': (3.7, 4.1), 'logscale': True},
+    'stanford_dogs': {'xmin': 0.09375, 'xmax': None, 'ymin': 0, 'ymax': 80, 'figsize': (3.7, 4.1), 'logscale': True}
 }
 
 _HVS_DEFAULTS = {

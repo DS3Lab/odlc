@@ -14,7 +14,7 @@ from src.classification.imagenet import (DenseNet121,
                                          Xception)
 
 from src.lib.logging_commons.utils import get_logger
-from dirs import KERAS_MODELS_DIR, TEMP_DIR
+from dirs import TEMP_DIR
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', required=True, type=str, help='name of model to be converted')

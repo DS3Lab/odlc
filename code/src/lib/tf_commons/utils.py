@@ -43,15 +43,15 @@ def close_summary_writers(*writers):
         w.close()
 
 
-def convert_data_format_naming(data_format):
-    if data_format == 'NHWC':
-        return 'channels_last'
-    elif data_format == 'NCHW':
-        return 'channels_first'
-    elif data_format == 'channels_last':
-        return 'NHWC'
-    elif data_format == 'channels_first':
-        return 'NCHW'
-    else:
-        raise ValueError('unknown data_format: {}'.format(data_format))
+# def convert_data_format_naming(data_format):
+#     if data_format == 'NHWC':
+#         return 'channels_last'
+#     elif data_format == 'NCHW':
+#         return 'channels_first'
+#     elif data_format == 'channels_last':
+#         return 'NHWC'
+#     elif data_format == 'channels_first':
+#         return 'NCHW'
+#     else:
+#         raise ValueError('unknown data_format: {}'.format(data_format))
 

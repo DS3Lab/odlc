@@ -14,8 +14,8 @@ class AbstractAttribute:
         return self
 
 
-def parse_kwargs(key, **kwargs):
-    try:
-        return kwargs[key]
-    except KeyError:
-        return None
+# def parse_kwargs(key, **kwargs):
+#     try:
+#         return kwargs[key]
+#     except KeyError:
+#         return None

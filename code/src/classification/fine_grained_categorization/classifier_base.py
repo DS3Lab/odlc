@@ -67,10 +67,3 @@ class FGVCClassifier(metaclass=ABCMeta):
     @property
     def num_classes(self):
         return self._dataset.NUM_CLASSES
-
-    # @classmethod
-    # def preprocess_batch(cls, input_batch, is_training):
-    #     def _preprocess(_input_image):
-    #         return cls.preprocess(_input_image, is_training)
-    #
-    #     return tf.map_fn(_preprocess, elems=input_batch, dtype=tf.float32)
