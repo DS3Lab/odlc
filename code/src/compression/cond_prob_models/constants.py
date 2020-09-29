@@ -1,3 +1,4 @@
+# this code has been adapted from https://github.com/fab-jul/imgcomp-cvpr
 import inspect
 import os
 

@@ -1,3 +1,4 @@
+# this code has been adapted from https://github.com/fab-jul/imgcomp-cvpr
 import tensorflow as tf
 from os import path
 import os

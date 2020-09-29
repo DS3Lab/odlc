@@ -1,3 +1,4 @@
+# this code has been adapted from https://github.com/fab-jul/imgcomp-cvpr
 import tensorflow as tf
 from src.lib.tf_commons.utils import nchw_to_nhwc, nhwc_to_nchw
 
