@@ -9,8 +9,7 @@
 - Tensorflow (tested with versions 1.8.0 and 1.9.0)
 - other required python packages are specified in `requirements.txt`
 
-### Checkpoints and pretrained models
-Checkpoints for RNN compression are available for download [here](https://notawebsite). Extract them to `code/resources/trained_models/`.\
+### Pretrained models
 In order to prepare CNNs trained for ImageNet classification, run
 ````bash
 cd code/
