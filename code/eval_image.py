@@ -56,7 +56,7 @@ def main(_opts):
     output_text += '* compression method: {}\n'.format(str(_opts.compression).upper())
     output_text += '* quality parameter: {}\n'.format(_opts.quality)
     output_text += '* bitrate: {:.3f} bpp\n'.format(bits_per_pixel)
-    output_text += '* MS-SSIM: {:.3f} bpp\n'.format(ms_ssim)
+    output_text += '* MS-SSIM: {:.3f}\n'.format(ms_ssim)
 
     if classifier is not None:
         output_text += '* classifier: {}\n'.format(classifier.NAME)

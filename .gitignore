@@ -1,6 +1,6 @@
 # resources to ignore
 code/resources/tmp/*
-code/resources/imagenet/meta/devkit/*
+!code/resources/tmp/.gitkeep
 
 code/resources/imagenet/weights/*
 !code/resources/imagenet/weights/.gitkeep

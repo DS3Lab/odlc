@@ -18,12 +18,12 @@ python prepare_keras_model.py --model CNN_MODEL
 where CNN Model is one of `densenet_121, inception_resnet_v2, inception_v3, mobilenet, resnet_50, vgg16, xception`. This 
 will download the model weights if necessary, and subsequently freeze the graph as a .pb file to `code/resources/keras_models/`. 
 
-## Compress and classify a sample image
+## Compress a sample image
 To compress and classify an image, run the following command
 ```bash
 cd code/
 python eval_image.py --image /path/to/image_file --compression COMPPRESSION_METHOD --alpha ALPHA --quality Q_PARAM \
---classifier CLASSIFIER --show
+--show
 ```
 where compression is specified with
 - `COMPRESSION_METHOD` is one of `rnn`, `jpeg`, `webp` or `bpg`,
@@ -31,8 +31,10 @@ where compression is specified with
 - `Q_PARAM` controls the compression rate; for RNN compression this must be an integer in 1, ..., 8; for BPG, JPEG and WEBP 
 compression the usual parameters apply.
 
-and the classifier is set via `CLASSIFIER` as one of
-- `densenet_121, inception_resnet_v2, inception_v3, mobilenet, resnet_50, vgg16, xception`
+If you want to additionally classify an image, make sure you have downloaded the corresponding pretrained weights 
+(as described in Section "Pretrained models"). Additionally you need to download the ILSVCR2012 devkit and store it in
+the directory `code/resources/imagenet/meta/`. The classifier is the set via the flag `--classifier CLASSIFIER` as one of
+ `densenet_121, inception_resnet_v2, inception_v3, mobilenet, resnet_50, vgg16, xception`
 
 ## Downloading and prepraring image data
 #### ILSVRC-2012
